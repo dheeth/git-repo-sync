@@ -3,7 +3,7 @@ git remote add target https://${INPUT_TARGET_USERNAME}:${INPUT_TARGET_TOKEN}@${I
 git config --global user.email "pawan@devtron.ai"
 git config --global user.name "pawan_06d2"
 
-git commit -am "syncd with github"
+git commit -am "synced with github"
 
 case "${GITHUB_EVENT_NAME}" in
     push)
