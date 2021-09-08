@@ -14,8 +14,8 @@ sed -i "103 s/value:.*/value: https:\/\/gitee.com\/devtron-labs\/git-sensor.git/
 
 sed -i "141 s/value:.*/value: https:\/\/gitee.com\/devtron-labs\/lens.git/" manifests/yamls/migrator.yaml
 
-git config --global user.email "prakarsh@devtron.ai"
-git config --global user.name "prakarsh"
+git config --global user.email "pawan@devtron.ai"
+git config --global user.name "pawan_06d2"
 
 git commit -am "updated github link to gitee"
 
