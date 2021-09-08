@@ -15,11 +15,10 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - uses: pawan-59/git-test@v0.1.0
+    - uses: devtron-labs/git-repo-sync@v0.1.4
       with:
-        # Such as https://github.com/pawan-59/git-repo-sync.git
+        # Such as https://github.com/devtron-labs/git-repo-sync.git
         target-url: <target-url>
-        # Such as wangchucheng
         target-username: <target-username>
         # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS_TOKEN }}
         target-token: <target-token>
