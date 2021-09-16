@@ -1,4 +1,9 @@
+git clone https://github.com/devtron-labs/devtron.git
+cd devtron
 git remote add target https://${INPUT_TARGET_USERNAME}:${INPUT_TARGET_TOKEN}@${INPUT_TARGET_URL#https://}
+
+git checkout main
+git remote -v
 
 sed -i "s/LTAG=.*/LTAG=\"main\";/" manifests/installation-script
 
@@ -14,20 +19,13 @@ sed -i "103 s/value:.*/value: https:\/\/gitee.com\/devtron-labs\/git-sensor.git/
 
 sed -i "141 s/value:.*/value: https:\/\/gitee.com\/devtron-labs\/lens.git/" manifests/yamls/migrator.yaml
 
-git config --global user.email "pawan@devtron.ai"
-git config --global user.name "pawan_06d2"
+git config --global user.email ${INPUT_TARGET_USEREMAIL}
 
-git commit -am "updated github link to gitee"
+git config --global user.name ${INPUT_TARGET_USERNAME}
 
-case "${GITHUB_EVENT_NAME}" in
-    push)
-        git push -f --all target
-        git push -f --tags target
-        ;;
-    delete)
-        git push -d target ${GITHUB_EVENT_REF}
-        ;;
-    *)
-        break
-        ;;
-esac
+
+git add .
+git commit -m "updated github link to gitee"
+
+git push -f --all target
+
