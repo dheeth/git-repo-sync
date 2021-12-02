@@ -7,7 +7,7 @@ git remote -v
 
 sed -i "s/LTAG=.*/LTAG=\"main\";/" manifests/installation-script
 
-sed -i "s/REPO_RAW_URL=.*/REPO_RAW_URL= https:\/\/gitee.com\/devtron-labs\/devtron\/raw/" manifests/installation-script
+sed -i "s/REPO_RAW_URL=.*/REPO_RAW_URL=\"https:\/\/gitee.com\/devtron-labs\/devtron\/raw\/\";/" manifests/installation-script
 
 sed -i "s/url:.*/url: https:\/\/gitee.com\/devtron-labs\/devtron\/raw\/main\/manifests\/installation-script/" manifests/install/devtron-installer.yaml
 
