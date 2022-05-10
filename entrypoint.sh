@@ -1,6 +1,6 @@
 git clone https://github.com/devtron-labs/devtron.git
 cd devtron
-git remote add target https://${INPUT_TARGET_USERNAME}:${INPUT_TARGET_TOKEN}@${INPUT_TARGET_URL#https://}
+git remote add target https://${INPUT_GITEE_TARGET_USERNAME}:${INPUT_GITEE_TARGET_TOKEN}@${INPUT_GITEE_TARGET_URL#https://}
 
 git checkout main
 git remote -v
@@ -19,9 +19,9 @@ sed -i "103 s/value:.*/value: https:\/\/gitee.com\/devtron-labs\/git-sensor.git/
 
 sed -i "141 s/value:.*/value: https:\/\/gitee.com\/devtron-labs\/lens.git/" manifests/yamls/migrator.yaml
 
-git config --global user.email ${INPUT_TARGET_USEREMAIL}
+git config --global user.email ${INPUT_GITEE_TARGET_USEREMAIL}
 
-git config --global user.name ${INPUT_TARGET_USERNAME}
+git config --global user.name ${INPUT_GITEE_TARGET_USERNAME}
 
 
 git add .
