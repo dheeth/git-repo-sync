@@ -48,14 +48,13 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/${{ script-file }}.sh
+    - run: ${{ github.action_path }}/${{ inputs.script-file }}.sh
       shell: bash
       env:
         INPUT_SOURCE_REPO: ${{ inputs.git-source-repo }}
         INPUT_TARGET_REPO: ${{ inputs.git-target-repo }}
         INPUT_GIT_TARGET_USERNAME: ${{ inputs.git-target-username }}
         INPUT_GIT_TARGET_TOKEN: ${{ inputs.git-target-token }}
-        GITHUB_EVENT_REF: ${{ github.event.ref }}
         INPUT_GIT_TARGET_USEREMAIL: ${{ inputs.git-target-useremail }}
         INPUT_TARGET_DIR: ${{ inputs.git-target-dir }}
         INPUT_GITEE_TARGET_URL: ${{ inputs.target-url }}
